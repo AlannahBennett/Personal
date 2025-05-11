@@ -1,11 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 import MyNav from './components/MyNav.js';
+import HeroSection from './components/HeroSection.js';
 
 function App() {
   return (
-    <MyNav></MyNav>
+    <div>
+      <MyNav />
+      <HeroSection />
+    </div>
   );
+  
 }
 
 export default App;

@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.hero-section {
+  height: 100vh;
+  background: linear-gradient(to right, #946796, #a3bec7, #c7cc95);
+  color: white;
+  padding: 0 20px;
+}
+
+.navbar-brand.custom-brand {
+  font-family: 'Reenie Beanie', cursive; 
+}
