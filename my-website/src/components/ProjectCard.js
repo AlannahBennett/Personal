@@ -1,20 +1,28 @@
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import '../index.css'; 
 
-function ProjectCard() {
+function ProjectCard({ title, description, imgSrc, link, backgroundColor }) {
+  const textStyle = { color: backgroundColor }; // Dynamic text color
+
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Project Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+    <Card className="project-card" style={{ backgroundColor }}>
+      <Card.Body className="d-flex flex-column justify-content-between">
+        <div className="title-container">
+          <Card.Title style={textStyle}>{title}</Card.Title>
+        </div>
+        <Card.Text className="flex-grow-1" >
+          {description}
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Button variant="primary" href={link} target="_blank">
+          View Project
+        </Button>
       </Card.Body>
     </Card>
   );
 }
 
 export default ProjectCard;
+
+
