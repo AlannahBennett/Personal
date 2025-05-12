@@ -12,38 +12,88 @@ code {
     monospace;
 }
 
-.hero-section {
-  height: 100vh;
-  background: linear-gradient(to right, #946796, #a3bec7, #c7cc95);
-  color: white;
-  padding: 0 20px;
-}
-
 .navbar-brand.custom-brand {
   font-family: "Reenie Beanie", cursive;
 }
 
-.project-card {
-  width: 260px;
-  border-radius: 0px;
+/* hero section css */
+.hero-section {
+  height: 100vh;
+  background: linear-gradient(to right, #FAEDCB, #C9E4DE, #C5DEF2, #D8CDF0, #F2C6DE, #F7D9C4);
+  color: white;
+  padding: 0 20px;
+  position: relative;
+  overflow: hidden;
 }
+
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-image {
+  width: 400px;
+}
+
+.scroll-indicator span {
+  font-size: 2rem;
+  color: white;
+  animation: bounce 2s infinite;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+.display-4.fw-bold {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  animation: glow 4s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* project card css */
+.project-card {
+  width: 280px;
+  height: 260px; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
 
 .project-card .title-container {
   position: absolute;
   top: 50%;
-  left: -10%;
+  left: -15%;
   transform: translateY(-50%);
-  height: 100%; /* Make title span the full height of the card */
-  writing-mode: vertical-rl; /* Title goes down the left side */
+  height: 100%; 
+  writing-mode: vertical-rl;
   text-align: center;
   font-weight: bold;
-  font-size: 1.25rem;
   white-space: nowrap;
-  color: rgb(12, 0, 0);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 5px; /* Optional: some horizontal space */
+  padding: 0 5px; 
 }
 
 .project-card .card-body {
@@ -51,13 +101,126 @@ code {
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
-  height: 100%; /* Ensure the card body fills the full height */
-  background-color: transparent; /* Transparent so we don't override background color */
+  height: 100%; 
+  background-color: transparent; 
 }
 
+
+/* this is all working fine for the card button */
 .project-card .btn {
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
+  font-size: 12px;  
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  background-color: #F8EDE3;  
+  border:  #F8EDE3;
+  color: BLACK;  /* White text color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card .btn:hover {
+  transform: translateX(-50%) scale(1.2); 
+  background-color:#F8EDE3;
+  color: BLACK;
+}
+
+.project-card .btn i {
+  margin-left: 5px;  
+  font-size: 1.1rem;  
+}
+
+/*skills section css */
+.skills-experience-section {
+  background-color: #F8EDE3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Vertical line with gradient ends */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #333 10%,
+    #333 90%,
+    transparent 100%
+  );
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* Start marker (top circle) */
+.timeline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  background-color: #333;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* End marker (bottom circle) */
+.timeline-end-circle {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  background-color: #333;
+  border-radius: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 1;
+}
+
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.timeline-content {
+  background-color: #f8ede3;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }

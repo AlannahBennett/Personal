@@ -24,6 +24,28 @@ const projects = [
     link: "https://github.com/AlannahBennett/SDGProject",
     backgroundColor: "#C5DEF2", //BLUE
   },
+  {
+    title: "PIZZA ORDERING SYSTEM",
+    description:
+      "Developed a functional pizza ordering system with accounts and order reviewing.",
+    link: "https://github.com/AlannahBennett/SDGProject",
+    backgroundColor: "#D8CDF0", //PURPLE
+  },
+  {
+    title: "UNIVERSITY SYSTEM",
+    description:
+      "Developed an university platform with an API to be able to create, read, update and delete content relating to modules, cohorts, degrees and students. ",
+    link: "https://github.com/AlannahBennett/SDGProject",
+    backgroundColor: "#F2C6DE", //PINK
+  },
+  {
+    title: "INTERN NEXUS",
+    description:
+      "Briefed with the task to transform an intern program to be future-ready & expansive whilst fostering a vibrant virtual and hybrid community. Our team of 7 created a React based web portal that allows interns to find out who's in the office, what time users are getting lunch and connect virtually or in person. ",
+    link: "https://github.com/AlannahBennett/SDGProject",
+    backgroundColor: "#F7D9C4", //ORANGE
+  },
+  
 ];
 
 function ProjectSection() {

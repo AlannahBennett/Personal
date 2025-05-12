@@ -1,7 +1,8 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import '../index.css'; 
+import { FaArrowRight } from 'react-icons/fa';
+import '../index.css'; // Custom CSS file for styles
 
 function ProjectCard({ title, description, imgSrc, link, backgroundColor }) {
   const textStyle = { color: backgroundColor }; // Dynamic text color
@@ -16,7 +17,7 @@ function ProjectCard({ title, description, imgSrc, link, backgroundColor }) {
           {description}
         </Card.Text>
         <Button variant="primary" href={link} target="_blank">
-          View Project
+          View Project <FaArrowRight />
         </Button>
       </Card.Body>
     </Card>
